@@ -181,6 +181,7 @@
         loadLoopRangeFromUrl();
       }
       const currentTime = clampTime(player.getCurrentTime());
+      if (isLoopEnabled && loopEnd > loopStart && currentTime >= loopEnd) { player.seekTo(loopStart, true); return; }
       const timeValue = document.getElementById("timeValue");
       const timeProgress = document.getElementById("timeProgress");
       const loopRange = document.getElementById("loopRange");
